@@ -1,4 +1,5 @@
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId } from '../../../src/util/chains';
+import { Token } from '@uniswap/sdk-core';
 import { Pair } from '@uniswap/v2-sdk';
 import _ from 'lodash';
 
@@ -52,6 +53,7 @@ import {
   WLD_WORLDCHAIN,
   WMATIC_POLYGON,
   WSTETH_MAINNET,
+  USDT_BLOCKDAG_TESTNET,
 } from '../token-provider';
 
 import { IV2SubgraphProvider, V2SubgraphPool } from './subgraph-provider';
@@ -153,6 +155,10 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     USDC_BASE_SEPOLIA,
   ],
   [ChainId.SONEIUM]: [WRAPPED_NATIVE_CURRENCY[ChainId.SONEIUM]!, USDC_SONEIUM],
+  [ChainId.BLOCKDAG_TESTNET]: [
+    WRAPPED_NATIVE_CURRENCY[ChainId.BLOCKDAG_TESTNET]!,
+    USDT_BLOCKDAG_TESTNET,
+  ],
 };
 
 /**
@@ -168,7 +174,7 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
  * @class StaticV2SubgraphProvider
  */
 export class StaticV2SubgraphProvider implements IV2SubgraphProvider {
-  constructor(private chainId: ChainId) {}
+  constructor(private chainId: ChainId) { }
 
   public async getPools(
     tokenIn?: Token,

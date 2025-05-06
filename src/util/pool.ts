@@ -1,5 +1,5 @@
 import { ADDRESS_ZERO } from '@uniswap/router-sdk';
-import { ChainId } from '@uniswap/sdk-core';
+import { ChainId } from '../../src/util/chains';
 import { Pool as V4Pool } from '@uniswap/v4-sdk';
 
 import { nativeOnChain } from './chains';
@@ -300,6 +300,16 @@ export const V4_ETH_WETH_FAKE_POOL: { [chainId in ChainId]: V4Pool } = {
   [ChainId.SONEIUM]: new V4Pool(
     nativeOnChain(ChainId.SONEIUM),
     nativeOnChain(ChainId.SONEIUM).wrapped,
+    0,
+    FAKE_TICK_SPACING,
+    ADDRESS_ZERO,
+    79228162514264337593543950336,
+    0,
+    0
+  ),
+  [ChainId.BLOCKDAG_TESTNET]: new V4Pool(
+    nativeOnChain(ChainId.BLOCKDAG_TESTNET),
+    nativeOnChain(ChainId.BLOCKDAG_TESTNET).wrapped,
     0,
     FAKE_TICK_SPACING,
     ADDRESS_ZERO,

@@ -1,4 +1,5 @@
-import { ChainId, Token, WETH9 } from '@uniswap/sdk-core';
+import { ChainId } from '../../../src/util/chains';
+import { Token, WETH9 } from '@uniswap/sdk-core';
 import NodeCache from 'node-cache';
 import sinon from 'sinon';
 import {

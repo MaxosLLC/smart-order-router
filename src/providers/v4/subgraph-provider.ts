@@ -1,5 +1,6 @@
 import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, Currency } from '@uniswap/sdk-core';
+import { ChainId } from '../../../src/util/chains';
+import { Currency } from '@uniswap/sdk-core';
 
 import { ProviderConfig } from '../provider';
 import { SubgraphProvider } from '../subgraph-provider';

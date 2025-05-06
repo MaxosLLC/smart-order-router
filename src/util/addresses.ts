@@ -1,5 +1,4 @@
 import {
-  ChainId,
   CHAIN_TO_ADDRESSES_MAP,
   Currency,
   SWAP_ROUTER_02_ADDRESSES as SWAP_ROUTER_02_ADDRESSES_HELPER,
@@ -7,6 +6,7 @@ import {
   WETH9 as WETH9_HELPER,
 } from '@uniswap/sdk-core';
 import { FACTORY_ADDRESS } from '@uniswap/v3-sdk';
+import { ChainId } from './chains';
 
 import { ADDRESS_ZERO } from '@uniswap/router-sdk';
 import { NETWORKS_WITH_SAME_UNISWAP_ADDRESSES } from './chains';
@@ -57,6 +57,8 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
     CHAIN_TO_ADDRESSES_MAP[ChainId.UNICHAIN].v3CoreFactoryAddress,
   [ChainId.SONEIUM]:
     CHAIN_TO_ADDRESSES_MAP[ChainId.SONEIUM].v3CoreFactoryAddress,
+  [ChainId.BLOCKDAG_TESTNET]:
+    "0x13aA6774D72963A690bD43073a1B1a0AA21c9BA0",
 };
 
 export const QUOTER_V2_ADDRESSES: AddressMap = {
@@ -92,6 +94,8 @@ export const QUOTER_V2_ADDRESSES: AddressMap = {
   // TODO: Gnosis + Moonbeam contracts to be deployed
   [ChainId.UNICHAIN]: CHAIN_TO_ADDRESSES_MAP[ChainId.UNICHAIN].quoterAddress,
   [ChainId.SONEIUM]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONEIUM].quoterAddress,
+  [ChainId.BLOCKDAG_TESTNET]:
+    "0x420b4490aFD4CcFE015579587440F78C737F48A1",
 };
 
 export const NEW_QUOTER_V2_ADDRESSES: AddressMap = {
@@ -118,6 +122,8 @@ export const NEW_QUOTER_V2_ADDRESSES: AddressMap = {
     CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_SEPOLIA].quoterAddress,
   [ChainId.UNICHAIN]: CHAIN_TO_ADDRESSES_MAP[ChainId.UNICHAIN].quoterAddress, // TODO: deploy view-only-quoter to unichain
   [ChainId.SONEIUM]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONEIUM].quoterAddress,
+  [ChainId.BLOCKDAG_TESTNET]:
+    "0x420b4490aFD4CcFE015579587440F78C737F48A1",
 };
 
 export const PROTOCOL_V4_QUOTER_ADDRESSES: AddressMap = {
@@ -209,12 +215,14 @@ export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
   // TODO: Gnosis + Moonbeam contracts to be deployed
   [ChainId.UNICHAIN]: CHAIN_TO_ADDRESSES_MAP[ChainId.UNICHAIN].multicallAddress,
   [ChainId.SONEIUM]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONEIUM].multicallAddress,
+  [ChainId.BLOCKDAG_TESTNET]:
+    "0x54E3C45108a4123D803CD1727760c96EA10f921f",
 };
 
 export const SWAP_ROUTER_02_ADDRESSES = (chainId: number): string => {
   return (
     SWAP_ROUTER_02_ADDRESSES_HELPER(chainId) ??
-    '0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45'
+    '0x45a05B1e370EC9d73c5D8E588dD038b975B1ee36'
   );
 };
 
@@ -325,6 +333,7 @@ export const WETH9: {
   [ChainId.BASE_SEPOLIA]: WETH9_HELPER[ChainId.BASE_SEPOLIA]!,
   [ChainId.UNICHAIN]: WETH9_HELPER[ChainId.UNICHAIN]!,
   [ChainId.SONEIUM]: WETH9_HELPER[ChainId.SONEIUM]!,
+  [ChainId.BLOCKDAG_TESTNET]: WETH9_HELPER[ChainId.BLOCKDAG_TESTNET]!,
 };
 
 export const BEACON_CHAIN_DEPOSIT_ADDRESS =

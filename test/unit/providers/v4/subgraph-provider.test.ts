@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import { V4SubgraphPool, V4SubgraphProvider } from '../../../../src';
-import { ChainId } from '@uniswap/sdk-core';
+import { ChainId } from '../../../src/util/chains';
 
 dotenv.config();
 

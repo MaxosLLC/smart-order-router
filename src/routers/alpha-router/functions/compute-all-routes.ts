@@ -1,5 +1,6 @@
 import { ADDRESS_ZERO, TPool } from '@uniswap/router-sdk';
-import { ChainId, Currency, Token } from '@uniswap/sdk-core';
+import { ChainId } from '../../../../src/util/chains';
+import { Currency, Token } from '@uniswap/sdk-core';
 import { Pair } from '@uniswap/v2-sdk';
 import { Pool as V3Pool } from '@uniswap/v3-sdk';
 import { Pool as V4Pool } from '@uniswap/v4-sdk';
@@ -126,7 +127,7 @@ export function computeAllMixedRoutes(
     ).length > 0;
   const amendedPools =
     containsV4NativePools && shouldEnableMixedRouteEthWeth
-      ? parts.concat(V4_ETH_WETH_FAKE_POOL[currencyIn.chainId as ChainId])
+      ? parts.concat(V4_ETH_WETH_FAKE_POOL[currencyIn.chainId as ChainId]!)
       : parts;
   // NOTE: we added a fake v4 pool, in order for mixed route to connect the v3 weth pool with v4 eth pool
   const routesRaw = computeAllRoutes<TPool, MixedRoute, Currency>(
@@ -190,7 +191,7 @@ export function computeAllRoutes<
         (pool) =>
           pool instanceof V4Pool &&
           pool.tickSpacing ===
-            V4_ETH_WETH_FAKE_POOL[tokenIn.chainId as ChainId].tickSpacing
+          V4_ETH_WETH_FAKE_POOL[tokenIn.chainId as ChainId]?.tickSpacing
       ).length > 0;
     const amendedMaxHops = currentRouteContainsFakeV4Pool
       ? maxHops + 1

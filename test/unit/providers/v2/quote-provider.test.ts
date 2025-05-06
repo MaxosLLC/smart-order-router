@@ -1,4 +1,5 @@
-import { ChainId, CurrencyAmount, Fraction, Token } from '@uniswap/sdk-core';
+import { ChainId } from '../../../src/util/chains';
+import { CurrencyAmount, Fraction, Token } from '@uniswap/sdk-core';
 import { Pair } from '@uniswap/v2-sdk';
 import { BigNumber } from 'ethers';
 import JSBI from 'jsbi';

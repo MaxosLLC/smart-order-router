@@ -1,6 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { BaseProvider } from '@ethersproject/providers';
-import { ChainId, Percent, Price } from '@uniswap/sdk-core';
+import { ChainId } from '../../../../src/util/chains';
+import { Percent, Price } from '@uniswap/sdk-core';
 import { Pool } from '@uniswap/v3-sdk';
 import { CurrencyAmount, log, WRAPPED_NATIVE_CURRENCY } from '../../../util';
 import { calculateL1GasFeesHelper } from '../../../util/gas-factory-helpers';

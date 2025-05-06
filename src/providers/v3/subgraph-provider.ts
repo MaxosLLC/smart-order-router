@@ -1,5 +1,6 @@
 import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId } from '../../../src/util/chains';
+import { Token } from '@uniswap/sdk-core';
 
 import { ProviderConfig } from '../provider';
 import { SubgraphProvider } from '../subgraph-provider';
@@ -60,6 +61,8 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
     'https://api.studio.thegraph.com/query/48211/uniswap-v3-base/version/latest',
   [ChainId.BLAST]:
     'https://gateway-arbitrum.network.thegraph.com/api/0ae45f0bf40ae2e73119b44ccd755967/subgraphs/id/2LHovKznvo8YmKC9ZprPjsYAZDCc4K5q4AYz8s3cnQn1',
+  [ChainId.BLOCKDAG_TESTNET]:
+    'https://indexer.dev.hyperindex.xyz/7a6fe21/v1/graphql'
 };
 
 /**
@@ -78,8 +81,7 @@ export interface IV3SubgraphProvider {
 
 export class V3SubgraphProvider
   extends SubgraphProvider<V3RawSubgraphPool, V3SubgraphPool>
-  implements IV3SubgraphProvider
-{
+  implements IV3SubgraphProvider {
   constructor(
     chainId: ChainId,
     retries = 2,

@@ -1,7 +1,8 @@
 import { Interface } from '@ethersproject/abi';
 import { BigNumber } from '@ethersproject/bignumber';
 import { parseBytes32String } from '@ethersproject/strings';
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId } from '../../src/util/chains';
+import { Token } from '@uniswap/sdk-core';
 import _ from 'lodash';
 
 import { IERC20Metadata__factory } from '../types/v3/factories/IERC20Metadata__factory';
@@ -798,11 +799,19 @@ export const USDC_SONEIUM = new Token(
   'Soneium Bridged USDC Soneium'
 );
 
+export const USDT_BLOCKDAG_TESTNET = new Token(
+  ChainId.BLOCKDAG_TESTNET,
+  '0x38e659126AeB5dE4C243229b34Bd99f11D5bb2D3',
+  6,
+  'USDT',
+  'USDT'
+);
+
 export class TokenProvider implements ITokenProvider {
   constructor(
     private chainId: ChainId,
     protected multicall2Provider: IMulticallProvider
-  ) {}
+  ) { }
 
   private async getTokenSymbol(
     addresses: string[],
@@ -969,10 +978,8 @@ export class TokenProvider implements ITokenProvider {
       }
 
       log.info(
-        `Got token symbol and decimals for ${
-          Object.values(addressToToken).length
-        } out of ${addresses.length} tokens on-chain ${
-          providerConfig ? `as of: ${providerConfig?.blockNumber}` : ''
+        `Got token symbol and decimals for ${Object.values(addressToToken).length
+        } out of ${addresses.length} tokens on-chain ${providerConfig ? `as of: ${providerConfig?.blockNumber}` : ''
         }`
       );
     }
@@ -1054,6 +1061,8 @@ export const USDT_ON = (chainId: ChainId): Token => {
       return USDT_BNB;
     case ChainId.MONAD_TESTNET:
       return USDT_MONAD_TESTNET;
+    case ChainId.BLOCKDAG_TESTNET:
+      return USDT_BLOCKDAG_TESTNET;
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }

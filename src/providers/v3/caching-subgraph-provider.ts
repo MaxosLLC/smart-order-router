@@ -1,4 +1,4 @@
-import { ChainId } from '@uniswap/sdk-core';
+import { ChainId } from '../../../src/util/chains';
 
 import { Protocol } from '@uniswap/router-sdk';
 import { CachingSubgraphProvider } from '../caching-subgraph-provider';

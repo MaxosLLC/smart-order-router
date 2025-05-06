@@ -4,7 +4,7 @@ import https from 'https';
 import { MaxUint256 } from '@ethersproject/constants';
 import { JsonRpcProvider } from '@ethersproject/providers';
 import { permit2Address } from '@uniswap/permit2-sdk';
-import { ChainId } from '@uniswap/sdk-core';
+import { ChainId } from '../../src/util/chains';
 import { UNIVERSAL_ROUTER_ADDRESS } from '@uniswap/universal-router-sdk';
 import axios, { AxiosRequestConfig } from 'axios';
 import { BigNumber } from 'ethers/lib/ethers';
@@ -171,6 +171,7 @@ export const TENDERLY_NOT_SUPPORTED_CHAINS = [
   ChainId.BNB,
   ChainId.ZORA,
   ChainId.MONAD_TESTNET,
+  ChainId.BLOCKDAG_TESTNET,
 ];
 
 // We multiply tenderly gas limit by this to overestimate gas limit
