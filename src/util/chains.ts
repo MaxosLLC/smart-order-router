@@ -1,10 +1,43 @@
 import {
-  ChainId,
   Currency,
   Ether,
   NativeCurrency,
   Token,
 } from '@uniswap/sdk-core';
+
+export enum ChainId {
+  MAINNET = 1,
+  GOERLI = 5,
+  SEPOLIA = 11155111,
+  OPTIMISM = 10,
+  OPTIMISM_GOERLI = 420,
+  OPTIMISM_SEPOLIA = 11155420,
+  ARBITRUM_ONE = 42161,
+  ARBITRUM_GOERLI = 421613,
+  ARBITRUM_SEPOLIA = 421614,
+  POLYGON = 137,
+  POLYGON_MUMBAI = 80001,
+  CELO = 42220,
+  CELO_ALFAJORES = 44787,
+  GNOSIS = 100,
+  MOONBEAM = 1284,
+  BNB = 56,
+  AVALANCHE = 43114,
+  BASE_GOERLI = 84531,
+  BASE_SEPOLIA = 84532,
+  BASE = 8453,
+  ZORA = 7777777,
+  ZORA_SEPOLIA = 999999999,
+  ROOTSTOCK = 30,
+  BLAST = 81457,
+  ZKSYNC = 324,
+  WORLDCHAIN = 480,
+  UNICHAIN_SEPOLIA = 1301,
+  UNICHAIN = 130,
+  MONAD_TESTNET = 10143,
+  SONEIUM = 1868,
+  BLOCKDAG_TESTNET = 1043
+}
 
 // WIP: Gnosis, Moonbeam
 export const SUPPORTED_CHAINS: ChainId[] = [
@@ -33,6 +66,7 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.BASE_SEPOLIA,
   ChainId.SONEIUM,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
+  ChainId.BLOCKDAG_TESTNET
 ];
 
 export const V2_SUPPORTED = [
@@ -48,6 +82,7 @@ export const V2_SUPPORTED = [
   ChainId.UNICHAIN_SEPOLIA,
   ChainId.UNICHAIN,
   ChainId.SONEIUM,
+  ChainId.BLOCKDAG_TESTNET,
 ];
 
 export const V4_SUPPORTED = [
@@ -63,6 +98,7 @@ export const V4_SUPPORTED = [
   ChainId.UNICHAIN_SEPOLIA,
   ChainId.UNICHAIN,
   ChainId.SONEIUM,
+  ChainId.BLOCKDAG_TESTNET,
 ];
 
 export const MIXED_SUPPORTED = [
@@ -80,6 +116,7 @@ export const MIXED_SUPPORTED = [
   ChainId.WORLDCHAIN,
   ChainId.ZORA,
   ChainId.SONEIUM,
+  ChainId.BLOCKDAG_TESTNET,
 ];
 
 export const HAS_L1_FEE = [
@@ -167,6 +204,8 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.UNICHAIN;
     case 1868:
       return ChainId.SONEIUM;
+    case 1043:
+      return ChainId.BLOCKDAG_TESTNET;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -201,6 +240,7 @@ export enum ChainName {
   UNICHAIN = 'unichain-mainnet',
   MONAD_TESTNET = 'monad-testnet',
   SONEIUM = 'soneium-mainnet',
+  BLOCKDAG_TESTNET = 'blockdag-testnet'
 }
 
 export enum NativeCurrencyName {
@@ -213,9 +253,15 @@ export enum NativeCurrencyName {
   BNB = 'BNB',
   AVALANCHE = 'AVAX',
   MONAD = 'MON',
+  BDAG = 'BDAG'
 }
 
 export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
+  [ChainId.BLOCKDAG_TESTNET]: [
+    'BDAG',
+    'BDAG',
+    '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  ],
   [ChainId.MAINNET]: [
     'ETH',
     'ETHER',
@@ -416,6 +462,8 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.MONAD_TESTNET;
     case 1868:
       return ChainName.SONEIUM;
+    case 1043:
+      return ChainName.BLOCKDAG_TESTNET;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -477,12 +525,21 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_UNICHAIN!;
     case ChainId.SONEIUM:
       return process.env.JSON_RPC_PROVIDER_SONEIUM!;
+    case ChainId.BLOCKDAG_TESTNET:
+      return process.env.JSON_RPC_PROVIDER_BLOCKDAG_TESTNET!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }
 };
 
 export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
+  [ChainId.BLOCKDAG_TESTNET]: new Token(
+    1043,
+    '0xC97B4e92fB267bB11b1CD2d475F9E8c16b433289',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
   [ChainId.MAINNET]: new Token(
     1,
     '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',

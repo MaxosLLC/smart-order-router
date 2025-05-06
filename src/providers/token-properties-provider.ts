@@ -1,5 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { ChainId, Currency } from '@uniswap/sdk-core';
+import { ChainId } from '../../src/util/chains';
+import { Currency } from '@uniswap/sdk-core';
 
 import { getAddressLowerCase, log, metric, MetricLoggerUnit } from '../util';
 
@@ -47,7 +48,7 @@ export class TokenPropertiesProvider implements ITokenPropertiesProvider {
     private allowList = DEFAULT_ALLOWLIST,
     private positiveCacheEntryTTL = POSITIVE_CACHE_ENTRY_TTL,
     private negativeCacheEntryTTL = NEGATIVE_CACHE_ENTRY_TTL
-  ) {}
+  ) { }
 
   public async getTokensProperties(
     currencies: Currency[],

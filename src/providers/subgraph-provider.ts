@@ -1,5 +1,6 @@
 import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, Currency, Token } from '@uniswap/sdk-core';
+import { ChainId } from '../../src/util/chains';
+import { Currency, Token } from '@uniswap/sdk-core';
 import retry from 'async-retry';
 import Timeout from 'await-timeout';
 import { gql, GraphQLClient } from 'graphql-request';
@@ -91,12 +92,10 @@ export abstract class SubgraphProvider<
     let pools: TRawSubgraphPool[] = [];
 
     log.info(
-      `Getting ${
-        this.protocol
-      } pools from the subgraph with page size ${PAGE_SIZE}${
-        providerConfig?.blockNumber
-          ? ` as of block ${providerConfig?.blockNumber}`
-          : ''
+      `Getting ${this.protocol
+      } pools from the subgraph with page size ${PAGE_SIZE}${providerConfig?.blockNumber
+        ? ` as of block ${providerConfig?.blockNumber}`
+        : ''
       }.`
     );
 
@@ -204,7 +203,7 @@ export abstract class SubgraphProvider<
         parseInt(pool.liquidity) > 0 ||
         parseFloat(pool.totalValueLockedETH) > this.trackedEthThreshold ||
         parseFloat(pool.totalValueLockedUSDUntracked) >
-          this.untrackedUsdThreshold
+        this.untrackedUsdThreshold
     );
     metric.putMetric(
       `${this.protocol}SubgraphProvider.chain_${this.chainId}.getPools.untracked.length`,

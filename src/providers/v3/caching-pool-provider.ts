@@ -1,4 +1,5 @@
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId } from '../../../src/util/chains';
+import { Token } from '@uniswap/sdk-core';
 import { FeeAmount, Pool } from '@uniswap/v3-sdk';
 import _ from 'lodash';
 

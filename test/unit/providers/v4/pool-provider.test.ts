@@ -1,5 +1,6 @@
 import { ID_TO_PROVIDER, UniswapMulticallProvider, V4PoolProvider } from '../../../../src';
-import { ChainId, Currency, Token } from '@uniswap/sdk-core';
+import { ChainId } from '../../../src/util/chains';
+import { Currency, Token } from '@uniswap/sdk-core';
 import { JsonRpcProvider } from '@ethersproject/providers';
 import { ADDRESS_ZERO, FeeAmount } from '@uniswap/v3-sdk';
 import dotenv from 'dotenv';

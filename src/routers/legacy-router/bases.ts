@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId } from '../../../src/util/chains';
+import { Token } from '@uniswap/sdk-core';
 
 import {
   BTC_BNB,
@@ -21,6 +22,7 @@ import {
   USDC_UNICHAIN_SEPOLIA,
   USDC_WORLDCHAIN,
   USDC_ZKSYNC,
+  USDT_BLOCKDAG_TESTNET,
   USDT_BNB,
   USDT_MAINNET,
   USDT_MONAD_TESTNET,
@@ -119,6 +121,10 @@ export const BASES_TO_CHECK_TRADES_AGAINST = (
     [ChainId.SONEIUM]: [
       WRAPPED_NATIVE_CURRENCY[ChainId.SONEIUM]!,
       USDC_SONEIUM,
+    ],
+    [ChainId.BLOCKDAG_TESTNET]: [
+      WRAPPED_NATIVE_CURRENCY[ChainId.BLOCKDAG_TESTNET]!,
+      USDT_BLOCKDAG_TESTNET,
     ],
   };
 };

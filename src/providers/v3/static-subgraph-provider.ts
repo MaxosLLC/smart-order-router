@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId } from '../../../src/util/chains';
+import { Token } from '@uniswap/sdk-core';
 import { FeeAmount, Pool } from '@uniswap/v3-sdk';
 import JSBI from 'jsbi';
 import _ from 'lodash';
@@ -54,6 +55,7 @@ import {
   USDC_WORLDCHAIN,
   USDC_ZKSYNC,
   USDT_ARBITRUM,
+  USDT_BLOCKDAG_TESTNET,
   USDT_BNB,
   USDT_GOERLI,
   USDT_MAINNET,
@@ -208,6 +210,10 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     USDC_BASE_SEPOLIA,
   ],
   [ChainId.SONEIUM]: [WRAPPED_NATIVE_CURRENCY[ChainId.SONEIUM]!, USDC_SONEIUM],
+  [ChainId.BLOCKDAG_TESTNET]: [
+    WRAPPED_NATIVE_CURRENCY[ChainId.BLOCKDAG_TESTNET]!,
+    USDT_BLOCKDAG_TESTNET,
+  ],
 };
 
 /**
@@ -225,7 +231,7 @@ export class StaticV3SubgraphProvider implements IV3SubgraphProvider {
   constructor(
     private chainId: ChainId,
     private poolProvider: IV3PoolProvider
-  ) {}
+  ) { }
 
   public async getPools(
     tokenIn?: Token,

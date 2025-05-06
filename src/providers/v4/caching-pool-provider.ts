@@ -1,4 +1,5 @@
-import { ChainId, Currency } from '@uniswap/sdk-core';
+import { ChainId } from '../../../src/util/chains';
+import { Currency } from '@uniswap/sdk-core';
 import { Pool } from '@uniswap/v4-sdk';
 import _ from 'lodash';
 import { log, metric, MetricLoggerUnit } from '../../util';

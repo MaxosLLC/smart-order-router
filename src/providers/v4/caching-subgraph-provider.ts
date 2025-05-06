@@ -1,5 +1,5 @@
 import { Protocol } from '@uniswap/router-sdk';
-import { ChainId } from '@uniswap/sdk-core';
+import { ChainId } from '../../../src/util/chains';
 import { ICache } from '../cache';
 import { CachingSubgraphProvider } from '../caching-subgraph-provider';
 import { IV4SubgraphProvider, V4SubgraphPool } from './subgraph-provider';

@@ -1,4 +1,5 @@
-import { ChainId, Currency, Ether } from '@uniswap/sdk-core';
+import { ChainId } from '../../../src/util/chains';
+import { Currency, Ether } from '@uniswap/sdk-core';
 import { USDT_ON } from '../../build/main';
 import {
   CEUR_CELO,

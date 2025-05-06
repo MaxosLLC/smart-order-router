@@ -1,4 +1,5 @@
-import { ChainId, Currency } from '@uniswap/sdk-core';
+import { ChainId } from '../../../src/util/chains';
+import { Currency } from '@uniswap/sdk-core';
 import { Pool } from '@uniswap/v4-sdk';
 import _ from 'lodash';
 
@@ -21,7 +22,7 @@ export class StaticV4SubgraphProvider implements IV4SubgraphProvider {
     private v4PoolParams: Array<
       [number, number, string]
     > = getApplicableV4FeesTickspacingsHooks(chainId)
-  ) {}
+  ) { }
 
   public async getPools(
     currencyIn?: Currency,
