@@ -66,7 +66,7 @@
     "mnemonist": "^0.38.3",
     "node-cache": "^5.1.2",
     "stats-lite": "^2.2.0",
-    "maxosllc-sdk-core": "file:/Users/pablocela/PCela/examples/maxos/sdks/sdks/sdk-core"
+    "maxosllc-sdk-core": "file:/Users/maxecoto/code/maxos/sdks/sdks/sdk-core"
   },
   "devDependencies": {
     "@ethersproject/providers": "^5.4.0",

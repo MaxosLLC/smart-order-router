@@ -54,6 +54,7 @@ import {
   USDT_OPTIMISM,
   USDT_OPTIMISM_GOERLI,
   USDT_OPTIMISM_SEPOLIA,
+  USDT_BLOCKDAG_TESTNET,
   WBTC_ARBITRUM,
   WBTC_MAINNET,
   WBTC_MOONBEAM,
@@ -205,6 +206,10 @@ export const CACHE_SEED_TOKENS: {
   [ChainId.SONEIUM]: {
     USDC: USDC_SONEIUM,
     WETH: WRAPPED_NATIVE_CURRENCY[ChainId.SONEIUM],
+  },
+  [ChainId.BLOCKDAG_TESTNET]: {
+    USDT: USDT_BLOCKDAG_TESTNET,
+    WETH: WRAPPED_NATIVE_CURRENCY[ChainId.BLOCKDAG_TESTNET],
   },
   // Currently we do not have providers for Moonbeam mainnet or Gnosis testnet
 };

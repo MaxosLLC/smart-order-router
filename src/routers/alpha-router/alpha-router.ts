@@ -693,6 +693,7 @@ export class AlphaRouter
         case ChainId.UNICHAIN:
         case ChainId.BASE_GOERLI:
         case ChainId.SONEIUM:
+        case ChainId.BLOCKDAG_TESTNET:
           this.onChainQuoteProvider = new OnChainQuoteProvider(
             chainId,
             provider,

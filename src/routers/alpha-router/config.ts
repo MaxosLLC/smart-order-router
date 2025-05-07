@@ -89,6 +89,39 @@ export const DEFAULT_ROUTING_CONFIG_BY_CHAIN = (
         distributionPercent: 25,
         forceCrossProtocol: false,
       };
+    case ChainId.BLOCKDAG_TESTNET:
+      return {
+        v2PoolSelection: {
+          topN: 3,
+          topNDirectSwaps: 1,
+          topNTokenInOut: 5,
+          topNSecondHop: 2,
+          topNWithEachBaseToken: 2,
+          topNWithBaseToken: 6,
+
+        },
+        v3PoolSelection: {
+          topN: 2,
+          topNDirectSwaps: 2,
+          topNTokenInOut: 2,
+          topNSecondHop: 1,
+          topNWithEachBaseToken: 3,
+          topNWithBaseToken: 3,
+        },
+        v4PoolSelection: {
+          topN: 2,
+          topNDirectSwaps: 2,
+          topNTokenInOut: 2,
+          topNSecondHop: 1,
+          topNWithEachBaseToken: 3,
+          topNWithBaseToken: 3,
+        },
+        maxSwapsPerPath: 3,
+        minSplits: 1,
+        maxSplits: 7,
+        distributionPercent: 5,
+        forceCrossProtocol: false,
+      };
     default:
       return {
         v2PoolSelection: {

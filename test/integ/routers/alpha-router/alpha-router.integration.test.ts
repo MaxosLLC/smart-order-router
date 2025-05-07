@@ -2759,7 +2759,7 @@ describe('alpha router integration', () => {
           GREENLIST_TOKEN_PAIRS.forEach(([tokenIn, tokenOut]) => {
             it(`${tokenIn.symbol} -> ${tokenOut.symbol} with portion`, async () => {
               const originalAmount = (tokenIn.symbol === 'WBTC' && tradeType === TradeType.EXACT_INPUT) ||
-              (tokenOut.symbol === 'WBTC' && tradeType === TradeType.EXACT_OUTPUT)
+                (tokenOut.symbol === 'WBTC' && tradeType === TradeType.EXACT_OUTPUT)
                 ? '1'
                 : '100';
               const amount =
@@ -3599,7 +3599,7 @@ describe('quote for other networks', () => {
       const erc1 = TEST_ERC20_1[chain]();
       const erc2 = TEST_ERC20_2[chain]();
 
-      describe(`${ID_TO_NETWORK_NAME(chain)} ${tradeType} 2xx`, function() {
+      describe(`${ID_TO_NETWORK_NAME(chain)} ${tradeType} 2xx`, function () {
         const wrappedNative = WNATIVE_ON(chain);
 
         let alphaRouter: AlphaRouter;
@@ -3756,7 +3756,7 @@ describe('quote for other networks', () => {
           });
         }
 
-        describe(`Swap`, function() {
+        describe(`Swap`, function () {
           it(`${wrappedNative.symbol} -> erc20`, async () => {
             if (chain === ChainId.SONEIUM) {
               // Soneium only has weth/usdc pool
@@ -3767,7 +3767,7 @@ describe('quote for other networks', () => {
             const tokenOut = erc1;
             const amount = chain === ChainId.UNICHAIN_SEPOLIA ?
               tradeType == TradeType.EXACT_INPUT ?
-                parseAmount('0.001', tokenIn):
+                parseAmount('0.001', tokenIn) :
                 parseAmount('0.001', tokenOut) :
               tradeType == TradeType.EXACT_INPUT
                 ? parseAmount('10', tokenIn)
@@ -3834,7 +3834,7 @@ describe('quote for other networks', () => {
             const exactOutAmount = '1';
             const amount = chain === ChainId.UNICHAIN_SEPOLIA ?
               tradeType == TradeType.EXACT_INPUT ?
-                parseAmount('0.001', tokenIn):
+                parseAmount('0.001', tokenIn) :
                 parseAmount('0.001', tokenOut) :
               tradeType == TradeType.EXACT_INPUT
                 ? parseAmount('1', tokenIn)
@@ -3946,7 +3946,7 @@ describe('quote for other networks', () => {
             const exactOutAmount = '1';
             const amount = chain === ChainId.UNICHAIN_SEPOLIA ?
               tradeType == TradeType.EXACT_INPUT ?
-                parseAmount('0.001', tokenIn):
+                parseAmount('0.001', tokenIn) :
                 parseAmount('0.001', tokenOut) :
               tradeType == TradeType.EXACT_INPUT
                 ? parseAmount('1', tokenIn)
@@ -3991,7 +3991,7 @@ describe('quote for other networks', () => {
             const exactOutAmount = chain === ChainId.BLAST ? '0.002' : '1';
             const amount = chain === ChainId.UNICHAIN_SEPOLIA ?
               tradeType == TradeType.EXACT_INPUT ?
-                parseAmount('0.001', tokenIn):
+                parseAmount('0.001', tokenIn) :
                 parseAmount('0.001', tokenOut) :
               tradeType == TradeType.EXACT_INPUT
                 ? parseAmount('1', tokenIn)
@@ -4038,7 +4038,7 @@ describe('quote for other networks', () => {
         });
 
         if (isTenderlyEnvironmentSet()) {
-          describe(`Simulate + Swap ${tradeType.toString()}`, function() {
+          describe(`Simulate + Swap ${tradeType.toString()}`, function () {
             // Tenderly Node RPC does not support Celo, Blast, Zksync, BNB, ZORA
             if ([
               ChainId.CELO,
@@ -4100,13 +4100,13 @@ describe('quote for other networks', () => {
 
               // Universal Router is not deployed on Gorli.
               const swapOptions: SwapOptions =
-                {
-                  type: SwapType.UNIVERSAL_ROUTER,
-                  version: UniversalRouterVersion.V1_2,
-                  recipient: WHALES(tokenIn),
-                  slippageTolerance: SLIPPAGE,
-                  deadlineOrPreviousBlockhash: parseDeadline(360),
-                };
+              {
+                type: SwapType.UNIVERSAL_ROUTER,
+                version: UniversalRouterVersion.V1_2,
+                recipient: WHALES(tokenIn),
+                slippageTolerance: SLIPPAGE,
+                deadlineOrPreviousBlockhash: parseDeadline(360),
+              };
 
               const swap = await alphaRouter.route(
                 amount,
@@ -4210,13 +4210,13 @@ describe('quote for other networks', () => {
 
               // Universal Router is not deployed on Gorli.
               const swapOptions: SwapOptions =
-                {
-                  type: SwapType.UNIVERSAL_ROUTER,
-                  version: UniversalRouterVersion.V1_2,
-                  recipient: WHALES(tokenIn),
-                  slippageTolerance: SLIPPAGE,
-                  deadlineOrPreviousBlockhash: parseDeadline(360),
-                };
+              {
+                type: SwapType.UNIVERSAL_ROUTER,
+                version: UniversalRouterVersion.V1_2,
+                recipient: WHALES(tokenIn),
+                slippageTolerance: SLIPPAGE,
+                deadlineOrPreviousBlockhash: parseDeadline(360),
+              };
 
               const swap = await alphaRouter.route(
                 amount,
@@ -4312,13 +4312,13 @@ describe('quote for other networks', () => {
 
               // Universal Router is not deployed on Gorli.
               const swapOptions: SwapOptions =
-                {
-                  type: SwapType.UNIVERSAL_ROUTER,
-                  version: UniversalRouterVersion.V2_0,
-                  recipient: WHALES(tokenIn),
-                  slippageTolerance: SLIPPAGE,
-                  deadlineOrPreviousBlockhash: parseDeadline(360),
-                };
+              {
+                type: SwapType.UNIVERSAL_ROUTER,
+                version: UniversalRouterVersion.V2_0,
+                recipient: WHALES(tokenIn),
+                slippageTolerance: SLIPPAGE,
+                deadlineOrPreviousBlockhash: parseDeadline(360),
+              };
 
               const swap = await alphaRouter.route(
                 amount,
@@ -4417,13 +4417,13 @@ describe('quote for other networks', () => {
 
               // Universal Router is not deployed on Gorli.
               const swapOptions: SwapOptions =
-                {
-                  type: SwapType.UNIVERSAL_ROUTER,
-                  version: UniversalRouterVersion.V1_2,
-                  recipient: WHALES(tokenIn),
-                  slippageTolerance: SLIPPAGE,
-                  deadlineOrPreviousBlockhash: parseDeadline(360),
-                };
+              {
+                type: SwapType.UNIVERSAL_ROUTER,
+                version: UniversalRouterVersion.V1_2,
+                recipient: WHALES(tokenIn),
+                slippageTolerance: SLIPPAGE,
+                deadlineOrPreviousBlockhash: parseDeadline(360),
+              };
 
               const swap = await alphaRouter.route(
                 amount,

@@ -55,6 +55,7 @@ import {
   USDC_UNICHAIN,
   USDT_ARBITRUM,
   USDT_BNB,
+  USDT_BLOCKDAG_TESTNET,
   USDT_MAINNET,
   USDT_MONAD_TESTNET,
   USDT_OPTIMISM,
@@ -259,6 +260,10 @@ const baseTokensByChain: { [chainId in ChainId]?: Token[] } = {
     USDC_UNICHAIN,
   ],
   [ChainId.SONEIUM]: [USDC_SONEIUM, WRAPPED_NATIVE_CURRENCY[ChainId.SONEIUM]!],
+  [ChainId.BLOCKDAG_TESTNET]: [
+    USDT_BLOCKDAG_TESTNET,
+    WRAPPED_NATIVE_CURRENCY[ChainId.BLOCKDAG_TESTNET]!,
+  ],
 };
 
 class SubcategorySelectionPools<SubgraphPool> {

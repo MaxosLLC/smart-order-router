@@ -339,6 +339,11 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
     'ETHER',
     '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
   ],
+  [ChainId.BLOCKDAG_TESTNET]: [
+    'BDAG',
+    'BDAG',
+    '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  ],
 };
 
 export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
@@ -369,6 +374,7 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.BASE_SEPOLIA]: NativeCurrencyName.ETHER,
   [ChainId.UNICHAIN]: NativeCurrencyName.ETHER,
   [ChainId.SONEIUM]: NativeCurrencyName.ETHER,
+  [ChainId.BLOCKDAG_TESTNET]: NativeCurrencyName.BDAG,
 };
 
 export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
