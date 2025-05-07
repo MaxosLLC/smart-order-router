@@ -6,7 +6,7 @@ import {
   WETH9 as WETH9_HELPER,
 } from '@uniswap/sdk-core';
 import { FACTORY_ADDRESS } from '@uniswap/v3-sdk';
-import { ChainId } from './chains';
+import { ChainId } from 'maxosllc-sdk-core';
 
 import { ADDRESS_ZERO } from '@uniswap/router-sdk';
 import { NETWORKS_WITH_SAME_UNISWAP_ADDRESSES } from './chains';

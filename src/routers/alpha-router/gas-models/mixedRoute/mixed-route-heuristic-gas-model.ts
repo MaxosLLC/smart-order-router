@@ -1,6 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { partitionMixedRouteByProtocol } from '@uniswap/router-sdk';
-import { ChainId, Pair } from 'maxosllc-sdk-core';
+import { Pair } from '@uniswap/v2-sdk';
+import { ChainId } from 'maxosllc-sdk-core';
 import { Pool as V3Pool } from '@uniswap/v3-sdk';
 import { Pool as V4Pool } from '@uniswap/v4-sdk';
 import JSBI from 'jsbi';
