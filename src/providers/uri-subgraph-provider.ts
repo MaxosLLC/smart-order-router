@@ -1,4 +1,4 @@
-import { ChainId } from '../../src/util/chains';
+import { ChainId } from 'maxosllc-sdk-core';
 import retry from 'async-retry';
 import Timeout from 'await-timeout';
 import axios from 'axios';

@@ -1,6 +1,5 @@
 import { Protocol } from '@uniswap/router-sdk';
-import { ChainId } from '../../../src/util/chains';
-import { TradeType } from '@uniswap/sdk-core';
+import { ChainId, TradeType } from 'maxosllc-sdk-core';
 import { CachedRoutes, DAI_MAINNET as DAI, USDC_MAINNET as USDC, V3RouteWithValidQuote } from '../../../../../../src';
 import { getV3RouteWithValidQuoteStub } from '../test-util/mocked-dependencies';
 

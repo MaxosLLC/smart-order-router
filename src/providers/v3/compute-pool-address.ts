@@ -1,9 +1,8 @@
 import { defaultAbiCoder } from '@ethersproject/abi'
 import { getCreate2Address } from '@ethersproject/address'
 import { keccak256 } from '@ethersproject/solidity'
-import { computeZksyncCreate2Address, Token } from '@uniswap/sdk-core'
+import { computeZksyncCreate2Address, Token, ChainId } from 'maxosllc-sdk-core'
 import { FeeAmount } from '@uniswap/v3-sdk';
-import { ChainId } from '../../../src/util/chains';
 
 /**
  * Computes a pool address

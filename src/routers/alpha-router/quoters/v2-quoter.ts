@@ -1,7 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { Protocol } from '@uniswap/router-sdk';
-import { ChainId } from '../../../../src/util/chains';
-import { Currency, Token, TradeType } from '@uniswap/sdk-core';
+import { ChainId, Currency, Token, TradeType } from 'maxosllc-sdk-core';
 import _ from 'lodash';
 
 import {

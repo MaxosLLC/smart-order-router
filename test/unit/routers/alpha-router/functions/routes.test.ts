@@ -8,8 +8,7 @@ import {
   USDC_MAINNET
 } from '../../../../../src';
 import { Protocol } from '@uniswap/router-sdk';
-import { ChainId } from '../../../src/util/chains';
-import { TradeType } from '@uniswap/sdk-core';
+import { ChainId, TradeType } from 'maxosllc-sdk-core';
 import {
   USDC_DAI,
   USDC_DAI_LOW,

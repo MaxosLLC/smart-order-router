@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { ChainId } from '../../../src/util/chains';
-import { Token } from '@uniswap/sdk-core';
+import { ChainId, Token } from 'maxosllc-sdk-core';
 
 import {
   BTC_BNB,

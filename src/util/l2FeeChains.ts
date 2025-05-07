@@ -1,4 +1,4 @@
-import { ChainId } from '../../src/util/chains';
+import { ChainId } from 'maxosllc-sdk-core';
 
 export const opStackChains = [
   ChainId.OPTIMISM,

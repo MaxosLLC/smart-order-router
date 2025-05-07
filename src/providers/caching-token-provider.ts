@@ -1,5 +1,4 @@
-import { ChainId } from '../../src/util/chains';
-import { Token } from '@uniswap/sdk-core';
+import { Token, ChainId } from 'maxosllc-sdk-core';
 import _ from 'lodash';
 
 import { log, WRAPPED_NATIVE_CURRENCY } from '../util';

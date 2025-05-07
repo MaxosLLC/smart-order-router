@@ -1,8 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { BaseProvider } from '@ethersproject/providers';
 import { Protocol, SwapRouter } from '@uniswap/router-sdk';
-import { ChainId } from '../../../src/util/chains';
-import { Fraction, Percent, TradeType } from '@uniswap/sdk-core';
+import { ChainId, Fraction, Percent, TradeType } from 'maxosllc-sdk-core';
 import { UniversalRouterVersion } from '@uniswap/universal-router-sdk';
 import { Pair } from '@uniswap/v2-sdk';
 import { encodeSqrtRatioX96, Pool as V3Pool, Position } from '@uniswap/v3-sdk';
@@ -1523,7 +1522,7 @@ describe('alpha router', () => {
           MOCK_ZERO_DEC_TOKEN,
           TradeType.EXACT_INPUT,
           undefined,
-          { ...ROUTING_CONFIG, ...{protocols: [Protocol.V3]} }
+          { ...ROUTING_CONFIG, ...{ protocols: [Protocol.V3] } }
         );
         expect(swap).toBeDefined();
 

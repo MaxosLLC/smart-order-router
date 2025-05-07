@@ -10,7 +10,7 @@ import {
 } from '../gas-model';
 import { TickBasedHeuristicGasModelFactory } from '../tick-based-heuristic-gas-model';
 
-import { ChainId } from '../../../../../src/util/chains';
+import { ChainId } from 'maxosllc-sdk-core';
 
 export class V4HeuristicGasModelFactory
   extends TickBasedHeuristicGasModelFactory<V4RouteWithValidQuote>

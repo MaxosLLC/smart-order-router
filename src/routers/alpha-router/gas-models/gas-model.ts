@@ -2,8 +2,8 @@ import { BigNumber } from '@ethersproject/bignumber';
 import {
   CurrencyAmount as CurrencyAmountRaw,
   Token,
-} from '@uniswap/sdk-core';
-import { ChainId } from '../../../../src/util/chains';
+} from 'maxosllc-sdk-core';
+import { ChainId } from 'maxosllc-sdk-core';
 
 import { Pair } from '@uniswap/v2-sdk';
 import { Pool } from '@uniswap/v3-sdk';

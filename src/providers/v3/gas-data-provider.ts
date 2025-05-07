@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { BaseProvider } from '@ethersproject/providers';
-import { ChainId } from '../../../src/util/chains';
+import { ChainId } from 'maxosllc-sdk-core';
 
 import { GasDataArbitrum__factory } from '../../types/other/factories/GasDataArbitrum__factory';
 import { ARB_GASINFO_ADDRESS } from '../../util';
@@ -32,8 +32,7 @@ export type ArbitrumGasData = {
 };
 
 export class ArbitrumGasDataProvider
-  implements IL2GasDataProvider<ArbitrumGasData>
-{
+  implements IL2GasDataProvider<ArbitrumGasData> {
   protected gasFeesAddress: string;
   protected blockNumberOverride: number | Promise<number> | undefined;
 

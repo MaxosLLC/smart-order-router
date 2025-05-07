@@ -1,5 +1,5 @@
 import { Protocol } from '@uniswap/router-sdk';
-import { ChainId } from '../../../src/util/chains';
+import { ChainId } from 'maxosllc-sdk-core';
 
 import { CachingSubgraphProvider } from '../caching-subgraph-provider';
 
@@ -14,8 +14,7 @@ import { IV2SubgraphProvider, V2SubgraphPool } from './subgraph-provider';
  */
 export class CachingV2SubgraphProvider
   extends CachingSubgraphProvider<V2SubgraphPool>
-  implements IV2SubgraphProvider
-{
+  implements IV2SubgraphProvider {
   /**
    * Creates an instance of CachingV2SubgraphProvider.
    * @param chainId The chain id to use.

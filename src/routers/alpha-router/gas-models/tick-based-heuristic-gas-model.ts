@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { BaseProvider } from '@ethersproject/providers';
-import { ChainId } from '../../../../src/util/chains';
+import { ChainId } from 'maxosllc-sdk-core';
 import { Percent, Price } from '@uniswap/sdk-core';
 import { Pool } from '@uniswap/v3-sdk';
 import { CurrencyAmount, log, WRAPPED_NATIVE_CURRENCY } from '../../../util';

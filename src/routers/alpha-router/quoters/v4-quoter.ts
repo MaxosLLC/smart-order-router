@@ -1,6 +1,5 @@
 import { Protocol } from '@uniswap/router-sdk';
-import { ChainId } from '../../../../src/util/chains';
-import { Currency, TradeType } from '@uniswap/sdk-core';
+import { ChainId, Currency, TradeType } from 'maxosllc-sdk-core';
 import _ from 'lodash';
 
 import {

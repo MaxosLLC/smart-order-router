@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import { V4SubgraphPool, V4SubgraphProvider } from '../../../../src';
-import { ChainId } from '../../../src/util/chains';
+import { ChainId } from 'maxosllc-sdk-core';
 
 dotenv.config();
 

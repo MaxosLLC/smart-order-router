@@ -1,6 +1,5 @@
 import { Protocol } from '@uniswap/router-sdk';
-import { ChainId } from '../../src/util/chains';
-import { Currency, Token } from '@uniswap/sdk-core';
+import { ChainId, Currency, Token } from 'maxosllc-sdk-core';
 import retry from 'async-retry';
 import Timeout from 'await-timeout';
 import { gql, GraphQLClient } from 'graphql-request';

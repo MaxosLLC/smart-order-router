@@ -1,6 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { ChainId } from '../../src/util/chains';
-import { Currency } from '@uniswap/sdk-core';
+import { ChainId, Currency } from 'maxosllc-sdk-core';
 import { Pool as V3Pool } from '@uniswap/v3-sdk';
 import { Pool as V4Pool } from '@uniswap/v4-sdk';
 import { Options as RetryOptions } from 'async-retry';

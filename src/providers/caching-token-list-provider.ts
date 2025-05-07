@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { ChainId } from '../../src/util/chains';
-import { Token } from '@uniswap/sdk-core';
+import { Token, ChainId } from 'maxosllc-sdk-core';
 import { TokenInfo, TokenList } from '@uniswap/token-lists';
 import axios from 'axios';
 

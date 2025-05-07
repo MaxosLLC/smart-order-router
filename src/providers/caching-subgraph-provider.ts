@@ -1,6 +1,5 @@
 import { Protocol } from '@uniswap/router-sdk';
-import { ChainId } from '../../src/util/chains';
-import { Currency, Token } from '@uniswap/sdk-core';
+import { ChainId, Currency, Token } from 'maxosllc-sdk-core';
 
 import { SubgraphPool } from '../routers/alpha-router/functions/get-candidate-pools';
 import { nativeOnChain, WRAPPED_NATIVE_CURRENCY } from '../util';
