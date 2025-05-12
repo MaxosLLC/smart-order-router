@@ -1,6 +1,5 @@
 import { ID_TO_PROVIDER, UniswapMulticallProvider, V4PoolProvider } from '../../../../src';
-import { ChainId } from '../../../src/util/chains';
-import { Currency, Token } from '@uniswap/sdk-core';
+import { ChainId, Currency, Token } from 'maxosllc-sdk-core';
 import { JsonRpcProvider } from '@ethersproject/providers';
 import { ADDRESS_ZERO, FeeAmount } from '@uniswap/v3-sdk';
 import dotenv from 'dotenv';
@@ -29,7 +28,7 @@ describe('PoolProvider', () => {
       'USDC Token'
     );
     const currencyPairs: Array<[Currency, Currency, number, number, string]> = new Array([USDC_SEPOLIA, OP_SEPOLIA, FeeAmount.LOW, 10, ADDRESS_ZERO]);
-    const poolAccessor = await poolProvider.getPools(currencyPairs, { blockNumber: 6534459});
+    const poolAccessor = await poolProvider.getPools(currencyPairs, { blockNumber: 6534459 });
     poolAccessor.getAllPools().forEach(pool => {
       expect(pool.poolId).toEqual('0xa40318dea5fabf21971f683f641b54d6d7d86f5b083cd6f0af9332c5c7a9ec06');
       expect(pool.liquidity.toString()).toEqual('10000000000000000000000');

@@ -1,8 +1,7 @@
 import { Interface } from '@ethersproject/abi';
 import { BigNumber } from '@ethersproject/bignumber';
 import { parseBytes32String } from '@ethersproject/strings';
-import { ChainId } from '../../src/util/chains';
-import { Token } from '@uniswap/sdk-core';
+import { Token, ChainId } from 'maxosllc-sdk-core';
 import _ from 'lodash';
 
 import { IERC20Metadata__factory } from '../types/v3/factories/IERC20Metadata__factory';

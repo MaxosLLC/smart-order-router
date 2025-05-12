@@ -6,7 +6,7 @@ import {
 } from '@uniswap/sdk-core';
 import { FeeAmount, TICK_SPACINGS } from '@uniswap/v3-sdk';
 import JSBI from 'jsbi';
-import { ChainId } from './chains';
+import { ChainId } from 'maxosllc-sdk-core';
 export class CurrencyAmount extends CurrencyAmountRaw<Currency> { }
 
 export const MAX_UINT160 = '0xffffffffffffffffffffffffffffffffffffffff';

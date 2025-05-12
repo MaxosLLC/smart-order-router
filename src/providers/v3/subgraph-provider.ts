@@ -1,6 +1,5 @@
 import { Protocol } from '@uniswap/router-sdk';
-import { ChainId } from '../../../src/util/chains';
-import { Token } from '@uniswap/sdk-core';
+import { ChainId, Token } from 'maxosllc-sdk-core';
 
 import { ProviderConfig } from '../provider';
 import { SubgraphProvider } from '../subgraph-provider';

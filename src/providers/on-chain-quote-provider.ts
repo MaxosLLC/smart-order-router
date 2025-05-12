@@ -7,7 +7,7 @@ import {
   MixedRouteSDK,
   Protocol,
 } from '@uniswap/router-sdk';
-import { ChainId } from '../../src/util/chains';
+import { ChainId } from 'maxosllc-sdk-core';
 import { encodeRouteToPath as encodeV3RouteToPath } from '@uniswap/v3-sdk';
 import {
   encodeRouteToPath as encodeV4RouteToPath,

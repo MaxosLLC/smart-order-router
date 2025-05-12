@@ -9,8 +9,8 @@ import {
   Currency,
   CurrencyAmount,
   TradeType,
-} from '@uniswap/sdk-core';
-import { ChainId } from '../../../../src/util/chains';
+  ChainId,
+} from 'maxosllc-sdk-core';
 
 import { AlphaRouterConfig } from '../../../routers';
 import { CacheMode } from './model';

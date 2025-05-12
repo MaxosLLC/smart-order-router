@@ -1,5 +1,4 @@
-import { ChainId } from '../../../src/util/chains';
-import { Token } from '@uniswap/sdk-core';
+import { ChainId, Token } from 'maxosllc-sdk-core';
 import { Pair } from '@uniswap/v2-sdk';
 import _ from 'lodash';
 

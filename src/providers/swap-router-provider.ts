@@ -1,6 +1,5 @@
 import { ApprovalTypes } from '@uniswap/router-sdk';
-import { ChainId } from '../../src/util/chains';
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core';
+import { ChainId, Currency, CurrencyAmount } from 'maxosllc-sdk-core';
 
 import { SwapRouter02__factory } from '../types/other/factories/SwapRouter02__factory';
 import { log, SWAP_ROUTER_02_ADDRESSES } from '../util';

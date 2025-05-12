@@ -1,4 +1,4 @@
-import { ChainId } from '../../src/util/chains';
+import { ChainId } from 'maxosllc-sdk-core';
 
 export const DEFAULT_BLOCKS_TO_LIVE: { [chain in ChainId]: number } = {
   // (60 minutes) / (12 seconds)= 300

@@ -1,6 +1,5 @@
 import { ADDRESS_ZERO, TPool } from '@uniswap/router-sdk';
-import { ChainId } from '../../../../src/util/chains';
-import { Currency, Token } from '@uniswap/sdk-core';
+import { ChainId, Currency, Token } from 'maxosllc-sdk-core';
 import { Pair } from '@uniswap/v2-sdk';
 import { Pool as V3Pool } from '@uniswap/v3-sdk';
 import { Pool as V4Pool } from '@uniswap/v4-sdk';

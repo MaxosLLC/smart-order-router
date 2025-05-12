@@ -1,4 +1,4 @@
-import { ChainId } from '../../src/util/chains';
+import { ChainId } from 'maxosllc-sdk-core';
 
 import { opStackChains } from '../util/l2FeeChains';
 import { EIP1559GasPriceProvider } from './eip-1559-gas-price-provider';

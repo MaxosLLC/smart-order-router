@@ -1,4 +1,4 @@
-import { ChainId } from '../../../src/util/chains';
+import { ChainId } from 'maxosllc-sdk-core';
 import dotenv from 'dotenv';
 import { GraphQLClient } from 'graphql-request';
 import sinon from 'sinon';
@@ -29,7 +29,7 @@ describe('SubgraphProvider V2', () => {
   let subgraphProviderMainnet: V2SubgraphProvider;
   let subgraphProviderBase: V2SubgraphProvider;
 
-  beforeEach(() => {});
+  beforeEach(() => { });
 
   afterEach(() => {
     sinon.restore();
@@ -40,10 +40,10 @@ describe('SubgraphProvider V2', () => {
     subgraphProviderBase = new V2SubgraphProvider(ChainId.BASE, 2, 30000, true, 1000, 0.01, Number.MAX_VALUE, 'test_url');
 
     const firstCallResponse = {
-        pairs: [
-          constructPool(false, '1'),
-        ],
-      };
+      pairs: [
+        constructPool(false, '1'),
+      ],
+    };
     const subsequentCallsResponse = { pairs: [] };
 
     // Configure the stub: return mock data on the first call, empty array on subsequent calls

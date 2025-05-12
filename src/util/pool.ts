@@ -1,5 +1,5 @@
 import { ADDRESS_ZERO } from '@uniswap/router-sdk';
-import { ChainId } from '../../src/util/chains';
+import { ChainId } from 'maxosllc-sdk-core';
 import { Pool as V4Pool } from '@uniswap/v4-sdk';
 
 import { nativeOnChain } from './chains';

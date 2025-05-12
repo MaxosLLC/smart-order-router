@@ -1,6 +1,5 @@
 import { Protocol } from '@uniswap/router-sdk';
-import { ChainId } from '../../../src/util/chains';
-import { Currency } from '@uniswap/sdk-core';
+import { ChainId, Currency } from 'maxosllc-sdk-core';
 
 import { ProviderConfig } from '../provider';
 import { SubgraphProvider } from '../subgraph-provider';
@@ -60,8 +59,7 @@ export interface IV4SubgraphProvider {
 
 export class V4SubgraphProvider
   extends SubgraphProvider<V4RawSubgraphPool, V4SubgraphPool>
-  implements IV4SubgraphProvider
-{
+  implements IV4SubgraphProvider {
   constructor(
     chainId: ChainId,
     retries = 2,

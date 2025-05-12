@@ -1,5 +1,4 @@
-import { ChainId } from '../../src/util/chains';
-import { Token } from '@uniswap/sdk-core';
+import { ChainId, Token } from 'maxosllc-sdk-core';
 import _ from 'lodash';
 
 import { ITokenValidator__factory } from '../types/other/factories/ITokenValidator__factory';

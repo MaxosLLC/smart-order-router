@@ -8,7 +8,7 @@ import {
   Token,
   TradeType,
 } from '@uniswap/sdk-core';
-import { ChainId } from '../../../src/util/chains';
+import { ChainId } from 'maxosllc-sdk-core';
 import { TokenList } from '@uniswap/token-lists';
 import { Pool, Position, SqrtPriceMath, TickMath } from '@uniswap/v3-sdk';
 import retry from 'async-retry';
