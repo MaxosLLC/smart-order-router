@@ -1,4 +1,4 @@
-import { Pool as V4Pool } from '@uniswap/v4-sdk';
+import { Pool as V4Pool } from '@maxosllc/v4-sdk';
 
 import { MixedRoute } from '../routers';
 

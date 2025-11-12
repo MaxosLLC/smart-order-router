@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Pair } from '@uniswap/v2-sdk';
-import { Pool as V3Pool } from '@uniswap/v3-sdk';
-import { Pool as V4Pool } from '@uniswap/v4-sdk';
+import { Pair } from '@maxosllc/v2-sdk';
+import { Pool as V3Pool } from '@maxosllc/v3-sdk';
+import { Pool as V4Pool } from '@maxosllc/v4-sdk';
 import sinon from 'sinon';
 import {
   CachedRoutes,
@@ -46,8 +46,8 @@ import {
   WETH_NONTOKEN_MEDIUM,
   WETH_USDT
 } from '../../../../../test-util/mock-data';
-import { ChainId, TradeType, WETH9 } from '@uniswap/sdk-core';
-import { Protocol } from '@uniswap/router-sdk';
+import { ChainId, TradeType, WETH9 } from '@maxosllc/sdk-core';
+import { Protocol } from '@maxosllc/router-sdk';
 
 export function getMockedMixedGasModel(): IGasModel<MixedRouteWithValidQuote> {
   const mockMixedGasModel = {

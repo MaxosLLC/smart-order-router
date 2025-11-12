@@ -1,4 +1,4 @@
-import { ADDRESS_ZERO } from '@uniswap/router-sdk';
+import { ADDRESS_ZERO } from '@maxosllc/router-sdk';
 import {
   CHAIN_TO_ADDRESSES_MAP,
   ChainId,
@@ -6,8 +6,8 @@ import {
   SWAP_ROUTER_02_ADDRESSES as SWAP_ROUTER_02_ADDRESSES_HELPER,
   Token,
   WETH9 as WETH9_HELPER,
-} from '@uniswap/sdk-core';
-import { FACTORY_ADDRESS } from '@uniswap/v3-sdk';
+} from '@maxosllc/sdk-core';
+import { FACTORY_ADDRESS } from '@maxosllc/v3-sdk';
 
 import { NETWORKS_WITH_SAME_UNISWAP_ADDRESSES } from './chains';
 
@@ -58,6 +58,8 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
     CHAIN_TO_ADDRESSES_MAP[ChainId.UNICHAIN].v3CoreFactoryAddress,
   [ChainId.SONEIUM]:
     CHAIN_TO_ADDRESSES_MAP[ChainId.SONEIUM].v3CoreFactoryAddress,
+  [ChainId.BLOCKDAG_AWAKENING]:
+    CHAIN_TO_ADDRESSES_MAP[ChainId.BLOCKDAG_AWAKENING].v3CoreFactoryAddress,
 };
 
 export const QUOTER_V2_ADDRESSES: AddressMap = {
@@ -94,6 +96,7 @@ export const QUOTER_V2_ADDRESSES: AddressMap = {
   // TODO: Gnosis + Moonbeam contracts to be deployed
   [ChainId.UNICHAIN]: CHAIN_TO_ADDRESSES_MAP[ChainId.UNICHAIN].quoterAddress,
   [ChainId.SONEIUM]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONEIUM].quoterAddress,
+  [ChainId.BLOCKDAG_AWAKENING]: CHAIN_TO_ADDRESSES_MAP[ChainId.BLOCKDAG_AWAKENING].quoterAddress,
 };
 
 export const NEW_QUOTER_V2_ADDRESSES: AddressMap = {
@@ -121,6 +124,7 @@ export const NEW_QUOTER_V2_ADDRESSES: AddressMap = {
     CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_SEPOLIA].quoterAddress,
   [ChainId.UNICHAIN]: CHAIN_TO_ADDRESSES_MAP[ChainId.UNICHAIN].quoterAddress, // TODO: deploy view-only-quoter to unichain
   [ChainId.SONEIUM]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONEIUM].quoterAddress,
+  [ChainId.BLOCKDAG_AWAKENING]: CHAIN_TO_ADDRESSES_MAP[ChainId.BLOCKDAG_AWAKENING].quoterAddress,
 };
 
 export const PROTOCOL_V4_QUOTER_ADDRESSES: AddressMap = {
@@ -213,6 +217,7 @@ export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
   // TODO: Gnosis + Moonbeam contracts to be deployed
   [ChainId.UNICHAIN]: CHAIN_TO_ADDRESSES_MAP[ChainId.UNICHAIN].multicallAddress,
   [ChainId.SONEIUM]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONEIUM].multicallAddress,
+  [ChainId.BLOCKDAG_AWAKENING]: CHAIN_TO_ADDRESSES_MAP[ChainId.BLOCKDAG_AWAKENING].multicallAddress,
 };
 
 export const SWAP_ROUTER_02_ADDRESSES = (chainId: number): string => {
@@ -330,6 +335,13 @@ export const WETH9: {
   [ChainId.BASE_SEPOLIA]: WETH9_HELPER[ChainId.BASE_SEPOLIA]!,
   [ChainId.UNICHAIN]: WETH9_HELPER[ChainId.UNICHAIN]!,
   [ChainId.SONEIUM]: WETH9_HELPER[ChainId.SONEIUM]!,
+  [ChainId.BLOCKDAG_AWAKENING]: new Token(
+    ChainId.BLOCKDAG_AWAKENING,
+    '0xC97B4e92fB267bB11b1CD2d475F9E8c16b433289',
+    18,
+    'WBDAG',
+    'Wrapped BDAG'
+  ),
 };
 
 export const BEACON_CHAIN_DEPOSIT_ADDRESS =

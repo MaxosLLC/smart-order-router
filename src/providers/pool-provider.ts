@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { ChainId, Currency } from '@uniswap/sdk-core';
-import { Pool as V3Pool } from '@uniswap/v3-sdk';
-import { Pool as V4Pool } from '@uniswap/v4-sdk';
+import { ChainId, Currency } from '@maxosllc/sdk-core';
+import { Pool as V3Pool } from '@maxosllc/v3-sdk';
+import { Pool as V4Pool } from '@maxosllc/v4-sdk';
 import { Options as RetryOptions } from 'async-retry';
 import _ from 'lodash';
 
@@ -45,7 +45,7 @@ export abstract class PoolProvider<
       minTimeout: 50,
       maxTimeout: 500,
     }
-  ) {}
+  ) { }
 
   protected async getPoolsInternal(
     poolConstructs: TPoolConstruct[],
@@ -92,10 +92,9 @@ export abstract class PoolProvider<
     ]);
 
     log.info(
-      `Got liquidity and slot0s for ${poolIdentifierSet.size} pools ${
-        providerConfig?.blockNumber
-          ? `as of block: ${providerConfig?.blockNumber}.`
-          : ``
+      `Got liquidity and slot0s for ${poolIdentifierSet.size} pools ${providerConfig?.blockNumber
+        ? `as of block: ${providerConfig?.blockNumber}.`
+        : ``
       }`
     );
 

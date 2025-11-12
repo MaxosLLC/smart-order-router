@@ -1,6 +1,6 @@
-import { Pair } from '@uniswap/v2-sdk';
-import { encodeSqrtRatioX96, FeeAmount, Pool as V3Pool } from '@uniswap/v3-sdk';
-import { Pool as V4Pool } from '@uniswap/v4-sdk';
+import { Pair } from '@maxosllc/v2-sdk';
+import { encodeSqrtRatioX96, FeeAmount, Pool as V3Pool } from '@maxosllc/v3-sdk';
+import { Pool as V4Pool } from '@maxosllc/v4-sdk';
 import {
   CurrencyAmount,
   DAI_MAINNET as DAI,
@@ -40,8 +40,8 @@ import {
   WETH9_USDT_V4_LOW,
   WETH_USDT
 } from '../../../../test-util/mock-data';
-import { ADDRESS_ZERO } from '@uniswap/router-sdk';
-import { ChainId, WETH9 } from '@uniswap/sdk-core';
+import { ADDRESS_ZERO } from '@maxosllc/router-sdk';
+import { ChainId, WETH9 } from '@maxosllc/sdk-core';
 import { HooksOptions } from '../../../../../src/util/hooksOptions';
 
 describe('compute all v4 routes', () => {

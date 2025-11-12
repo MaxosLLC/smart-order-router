@@ -1,5 +1,5 @@
-import { ChainId, Currency } from '@uniswap/sdk-core';
-import { Pool } from '@uniswap/v4-sdk';
+import { ChainId, Currency } from '@maxosllc/sdk-core';
+import { Pool } from '@maxosllc/v4-sdk';
 import _ from 'lodash';
 
 import { log, metric, MetricLoggerUnit } from '../../util';
@@ -28,7 +28,7 @@ export class CachingV4PoolProvider implements IV4PoolProvider {
     protected chainId: ChainId,
     protected poolProvider: IV4PoolProvider,
     private cache: ICache<Pool>
-  ) {}
+  ) { }
 
   public async getPools(
     currencyPairs: [Currency, Currency, number, number, string][],
@@ -102,10 +102,8 @@ export class CachingV4PoolProvider implements IV4PoolProvider {
           (t) => `${t[0].symbol} ${t[1].symbol} ${t[2]}`
         ),
       },
-      `Found ${
-        Object.keys(poolIdToPool).length
-      } V4 pools already in local cache. About to get liquidity and slot0s for ${
-        poolsToGetCurrencyPairs.length
+      `Found ${Object.keys(poolIdToPool).length
+      } V4 pools already in local cache. About to get liquidity and slot0s for ${poolsToGetCurrencyPairs.length
       } pools.`
     );
 

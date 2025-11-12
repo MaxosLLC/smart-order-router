@@ -4,10 +4,10 @@ import {
   Ether,
   Fraction,
   TradeType
-} from '@uniswap/sdk-core';
-import { Pair } from '@uniswap/v2-sdk';
-import { Pool } from '@uniswap/v3-sdk';
-import { Pool as PoolV4 } from '@uniswap/v4-sdk';
+} from '@maxosllc/sdk-core';
+import { Pair } from '@maxosllc/v2-sdk';
+import { Pool } from '@maxosllc/v3-sdk';
+import { Pool as PoolV4 } from '@maxosllc/v4-sdk';
 import JSBI from 'jsbi';
 import _ from 'lodash';
 import sinon from 'sinon';

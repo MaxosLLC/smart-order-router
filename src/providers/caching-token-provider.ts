@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId, Token } from '@maxosllc/sdk-core';
 import _ from 'lodash';
 
 import { log, WRAPPED_NATIVE_CURRENCY } from '../util';
@@ -65,6 +65,7 @@ import {
   WLD_WORLDCHAIN,
   WMATIC_POLYGON,
   WMATIC_POLYGON_MUMBAI,
+  USDC_BLOCKDAG_AWAKENING
 } from './token-provider';
 
 // These tokens will added to the Token cache on initialization.
@@ -210,6 +211,10 @@ export const CACHE_SEED_TOKENS: {
   [ChainId.SONEIUM]: {
     USDC: USDC_SONEIUM,
     WETH: WRAPPED_NATIVE_CURRENCY[ChainId.SONEIUM],
+  },
+  [ChainId.BLOCKDAG_AWAKENING]: {
+    USDC: USDC_BLOCKDAG_AWAKENING,
+    WBDAG: WRAPPED_NATIVE_CURRENCY[ChainId.BLOCKDAG_AWAKENING],
   },
   // Currently we do not have providers for Moonbeam mainnet or Gnosis testnet
 };

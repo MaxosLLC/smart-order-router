@@ -1,4 +1,4 @@
-import { Protocol } from '@uniswap/router-sdk';
+import { Protocol } from '@maxosllc/router-sdk';
 
 import { SubgraphProviderWithFallBacks } from '../subgraph-provider-with-fallback';
 
@@ -13,8 +13,7 @@ import { IV3SubgraphProvider, V3SubgraphPool } from './subgraph-provider';
  */
 export class V3SubgraphProviderWithFallBacks
   extends SubgraphProviderWithFallBacks<V3SubgraphPool>
-  implements IV3SubgraphProvider
-{
+  implements IV3SubgraphProvider {
   constructor(fallbacks: IV3SubgraphProvider[]) {
     super(fallbacks, Protocol.V3);
   }

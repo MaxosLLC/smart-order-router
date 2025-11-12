@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { BaseProvider } from '@ethersproject/providers';
-import { ChainId } from '@uniswap/sdk-core';
+import { ChainId } from '@maxosllc/sdk-core';
 
 import { TokenFeeDetector } from '../types/other/TokenFeeDetector';
 import { TokenFeeDetector__factory } from '../types/other/factories/TokenFeeDetector__factory';

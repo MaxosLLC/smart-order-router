@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { ChainId, Token } from '@uniswap/sdk-core';
-import { FeeAmount, Pool } from '@uniswap/v3-sdk';
+import { ChainId, Token } from '@maxosllc/sdk-core';
+import { FeeAmount, Pool } from '@maxosllc/v3-sdk';
 import JSBI from 'jsbi';
 import _ from 'lodash';
 
@@ -75,6 +75,7 @@ import {
   WMATIC_POLYGON_MUMBAI,
   WSTETH_MAINNET,
   WXDAI_GNOSIS,
+  USDC_BLOCKDAG_AWAKENING,
 } from '../token-provider';
 
 import { IV3PoolProvider } from './pool-provider';
@@ -210,6 +211,7 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     USDC_BASE_SEPOLIA,
   ],
   [ChainId.SONEIUM]: [WRAPPED_NATIVE_CURRENCY[ChainId.SONEIUM]!, USDC_SONEIUM],
+  [ChainId.BLOCKDAG_AWAKENING]: [WRAPPED_NATIVE_CURRENCY[ChainId.BLOCKDAG_AWAKENING]!, USDC_BLOCKDAG_AWAKENING],
 };
 
 /**

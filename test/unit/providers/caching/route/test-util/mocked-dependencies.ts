@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, TradeType } from '@uniswap/sdk-core';
+import { Protocol } from '@maxosllc/router-sdk';
+import { ChainId, TradeType } from '@maxosllc/sdk-core';
 import {
   CachedRoutes,
   CurrencyAmount,

@@ -1,9 +1,9 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Protocol } from '@uniswap/router-sdk';
-import { Currency, Token, TradeType } from '@uniswap/sdk-core';
-import { Pair } from '@uniswap/v2-sdk';
-import { Pool as V3Pool } from '@uniswap/v3-sdk';
-import { Pool as V4Pool } from '@uniswap/v4-sdk';
+import { Protocol } from '@maxosllc/router-sdk';
+import { Currency, Token, TradeType } from '@maxosllc/sdk-core';
+import { Pair } from '@maxosllc/v2-sdk';
+import { Pool as V3Pool } from '@maxosllc/v3-sdk';
+import { Pool as V4Pool } from '@maxosllc/v4-sdk';
 import _ from 'lodash';
 
 import { IV4PoolProvider } from '../../../providers';

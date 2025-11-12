@@ -1,8 +1,8 @@
-import { ADDRESS_ZERO, TPool } from '@uniswap/router-sdk';
-import { ChainId, Currency, Token } from '@uniswap/sdk-core';
-import { Pair } from '@uniswap/v2-sdk';
-import { Pool as V3Pool } from '@uniswap/v3-sdk';
-import { Pool as V4Pool } from '@uniswap/v4-sdk';
+import { ADDRESS_ZERO, TPool } from '@maxosllc/router-sdk';
+import { ChainId, Currency, Token } from '@maxosllc/sdk-core';
+import { Pair } from '@maxosllc/v2-sdk';
+import { Pool as V3Pool } from '@maxosllc/v3-sdk';
+import { Pool as V4Pool } from '@maxosllc/v4-sdk';
 
 import {
   getAddressLowerCase,
@@ -190,7 +190,7 @@ export function computeAllRoutes<
         (pool) =>
           pool instanceof V4Pool &&
           pool.tickSpacing ===
-            V4_ETH_WETH_FAKE_POOL[tokenIn.chainId as ChainId].tickSpacing
+          V4_ETH_WETH_FAKE_POOL[tokenIn.chainId as ChainId].tickSpacing
       ).length > 0;
     const amendedMaxHops = currentRouteContainsFakeV4Pool
       ? maxHops + 1

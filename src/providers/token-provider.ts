@@ -1,7 +1,7 @@
 import { Interface } from '@ethersproject/abi';
 import { BigNumber } from '@ethersproject/bignumber';
 import { parseBytes32String } from '@ethersproject/strings';
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId, Token } from '@maxosllc/sdk-core';
 import _ from 'lodash';
 
 import { IERC20Metadata__factory } from '../types/v3/factories/IERC20Metadata__factory';
@@ -813,6 +813,22 @@ export const USDC_SONEIUM = new Token(
   'Soneium Bridged USDC Soneium'
 );
 
+export const USDC_BLOCKDAG_AWAKENING = new Token(
+  ChainId.BLOCKDAG_AWAKENING,
+  '0x74Cc1bB5B94D4A9F4Fe8b83a9fFa76E04c50B4F5',
+  6,
+  'USDC',
+  'USD Token'
+);
+
+export const WBDAG_BLOCKDAG_AWAKENING = new Token(
+  ChainId.BLOCKDAG_AWAKENING,
+  '0xC97B4e92fB267bB11b1CD2d475F9E8c16b433289',
+  18,
+  'WBDAG',
+  'Wrapped BDAG'
+);
+
 export class TokenProvider implements ITokenProvider {
   constructor(
     private chainId: ChainId,
@@ -1124,6 +1140,8 @@ export const USDC_ON = (chainId: ChainId): Token => {
       return USDC_SONEIUM;
     case ChainId.MONAD:
       return USDC_MONAD;
+    case ChainId.BLOCKDAG_AWAKENING:
+      return USDC_BLOCKDAG_AWAKENING;
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }

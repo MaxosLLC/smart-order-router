@@ -1,5 +1,5 @@
-import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, Currency, Token } from '@uniswap/sdk-core';
+import { Protocol } from '@maxosllc/router-sdk';
+import { ChainId, Currency, Token } from '@maxosllc/sdk-core';
 import retry from 'async-retry';
 import Timeout from 'await-timeout';
 import { gql, GraphQLClient } from 'graphql-request';
@@ -107,12 +107,10 @@ export abstract class SubgraphProvider<
         : PAGE_SIZE;
 
     log.info(
-      `Getting ${
-        this.protocol
-      } pools from the subgraph with page size ${pageSizeToUse}${
-        providerConfig?.blockNumber
-          ? ` as of block ${providerConfig?.blockNumber}`
-          : ''
+      `Getting ${this.protocol
+      } pools from the subgraph with page size ${pageSizeToUse}${providerConfig?.blockNumber
+        ? ` as of block ${providerConfig?.blockNumber}`
+        : ''
       }.`
     );
 
@@ -140,9 +138,9 @@ export abstract class SubgraphProvider<
       // 2. V4: Non-Zora pools with liquidity > 0
       ...(this.protocol === Protocol.V4
         ? [
-            {
-              name: 'V4 non-Zora high liquidity pools',
-              query: gql`
+          {
+            name: 'V4 non-Zora high liquidity pools',
+            query: gql`
           query getV4NonZoraHighLiquidityPools($pageSize: Int!, $id: String, $zoraHooks: [String!]!) {
             pools(
               first: $pageSize
@@ -157,12 +155,12 @@ export abstract class SubgraphProvider<
             }
           }
         `,
-              variables: { zoraHooks: Array.from(this.zoraHooks) },
-            },
-            // 3. V4: Zora pools with liquidity > 0 AND TVL > trackedZoraEthThreshold
-            {
-              name: 'V4 Zora high liquidity pools',
-              query: gql`
+            variables: { zoraHooks: Array.from(this.zoraHooks) },
+          },
+          // 3. V4: Zora pools with liquidity > 0 AND TVL > trackedZoraEthThreshold
+          {
+            name: 'V4 Zora high liquidity pools',
+            query: gql`
           query getV4ZoraHighLiquidityPools($pageSize: Int!, $id: String, $zoraHooks: [String!]!, $zoraThreshold: String!) {
             pools(
               first: $pageSize
@@ -178,19 +176,19 @@ export abstract class SubgraphProvider<
             }
           }
         `,
-              variables: {
-                zoraHooks: Array.from(this.zoraHooks),
-                zoraThreshold: this.trackedZoraEthThreshold.toString(),
-              },
+            variables: {
+              zoraHooks: Array.from(this.zoraHooks),
+              zoraThreshold: this.trackedZoraEthThreshold.toString(),
             },
-          ]
+          },
+        ]
         : []),
       // 4. V3: Pools with liquidity > 0 AND totalValueLockedETH = 0 (special V3 condition)
       ...(this.protocol === Protocol.V3
         ? [
-            {
-              name: 'V3 zero ETH pools',
-              query: gql`
+          {
+            name: 'V3 zero ETH pools',
+            query: gql`
           query getV3ZeroETHPools($pageSize: Int!, $id: String) {
             pools(
               first: $pageSize
@@ -205,9 +203,9 @@ export abstract class SubgraphProvider<
             }
           }
         `,
-              variables: {},
-            },
-          ]
+            variables: {},
+          },
+        ]
         : []),
     ];
 
@@ -251,31 +249,27 @@ export abstract class SubgraphProvider<
             }
 
             metric.putMetric(
-              `${this.protocol}SubgraphProvider.chain_${
-                this.chainId
+              `${this.protocol}SubgraphProvider.chain_${this.chainId
               }.getPools.${queryConfig.name
                 .replace(/\s+/g, '_')
                 .toLowerCase()}.paginate.pageSize`,
               poolsPage.length
             );
             log.info(
-              `Fetched ${poolsPage.length} pools for ${queryConfig.name} in ${
-                Date.now() - start
+              `Fetched ${poolsPage.length} pools for ${queryConfig.name} in ${Date.now() - start
               }ms`
             );
           } while (poolsPage.length > 0);
 
           metric.putMetric(
-            `${this.protocol}SubgraphProvider.chain_${
-              this.chainId
+            `${this.protocol}SubgraphProvider.chain_${this.chainId
             }.getPools.${queryConfig.name
               .replace(/\s+/g, '_')
               .toLowerCase()}.paginate`,
             totalPages
           );
           metric.putMetric(
-            `${this.protocol}SubgraphProvider.chain_${
-              this.chainId
+            `${this.protocol}SubgraphProvider.chain_${this.chainId
             }.getPools.${queryConfig.name
               .replace(/\s+/g, '_')
               .toLowerCase()}.pools.length`,

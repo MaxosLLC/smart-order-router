@@ -1,5 +1,5 @@
-import { Protocol } from '@uniswap/router-sdk';
-import { Token } from '@uniswap/sdk-core';
+import { Protocol } from '@maxosllc/router-sdk';
+import { Token } from '@maxosllc/sdk-core';
 
 import { SubgraphPool } from '../routers/alpha-router/functions/get-candidate-pools';
 import { log } from '../util';
@@ -9,12 +9,11 @@ import { ISubgraphProvider } from './subgraph-provider';
 
 export abstract class SubgraphProviderWithFallBacks<
   TSubgraphPool extends SubgraphPool
-> implements ISubgraphProvider<TSubgraphPool>
-{
+> implements ISubgraphProvider<TSubgraphPool> {
   protected constructor(
     private fallbacks: ISubgraphProvider<TSubgraphPool>[],
     private protocol: Protocol
-  ) {}
+  ) { }
 
   public async getPools(
     currencyIn?: Token,

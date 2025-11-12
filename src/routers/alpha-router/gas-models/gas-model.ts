@@ -3,9 +3,9 @@ import {
   ChainId,
   CurrencyAmount as CurrencyAmountRaw,
   Token,
-} from '@uniswap/sdk-core';
-import { Pair } from '@uniswap/v2-sdk';
-import { Pool } from '@uniswap/v3-sdk';
+} from '@maxosllc/sdk-core';
+import { Pair } from '@maxosllc/v2-sdk';
+import { Pool } from '@maxosllc/v3-sdk';
 
 import { ProviderConfig } from '../../../providers/provider';
 import {
@@ -66,6 +66,7 @@ import {
   USDT_OPTIMISM_GOERLI,
   USDT_OPTIMISM_SEPOLIA,
   WBTC_GOERLI,
+  USDC_BLOCKDAG_AWAKENING,
 } from '../../../providers/token-provider';
 import { IV2PoolProvider } from '../../../providers/v2/pool-provider';
 import {
@@ -137,6 +138,7 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.BASE_SEPOLIA]: [USDC_BASE_SEPOLIA],
   [ChainId.UNICHAIN]: [DAI_UNICHAIN, USDC_UNICHAIN],
   [ChainId.SONEIUM]: [USDC_SONEIUM],
+  [ChainId.BLOCKDAG_AWAKENING]: [USDC_BLOCKDAG_AWAKENING],
 };
 
 export type L1ToL2GasCosts = {
@@ -249,7 +251,7 @@ export abstract class IV2GasModelFactory {
  */
 export abstract class IOnChainGasModelFactory<
   TRouteWithValidQuote extends RouteWithValidQuote
-  > {
+> {
   public abstract buildGasModel({
     chainId,
     gasPriceWei,

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId, Token } from '@maxosllc/sdk-core';
 
 import {
   BTC_BNB,
@@ -30,6 +30,7 @@ import {
   WLD_WORLDCHAIN,
   WMATIC_POLYGON,
   WMATIC_POLYGON_MUMBAI,
+  USDC_BLOCKDAG_AWAKENING,
 } from '../../providers/token-provider';
 import { WRAPPED_NATIVE_CURRENCY } from '../../util/chains';
 
@@ -121,6 +122,10 @@ export const BASES_TO_CHECK_TRADES_AGAINST = (
     [ChainId.SONEIUM]: [
       WRAPPED_NATIVE_CURRENCY[ChainId.SONEIUM]!,
       USDC_SONEIUM,
+    ],
+    [ChainId.BLOCKDAG_AWAKENING]: [
+      WRAPPED_NATIVE_CURRENCY[ChainId.BLOCKDAG_AWAKENING]!,
+      USDC_BLOCKDAG_AWAKENING,
     ],
   };
 };

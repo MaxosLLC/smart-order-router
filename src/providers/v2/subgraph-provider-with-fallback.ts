@@ -1,4 +1,4 @@
-import { Protocol } from '@uniswap/router-sdk';
+import { Protocol } from '@maxosllc/router-sdk';
 
 import { SubgraphProviderWithFallBacks } from '../subgraph-provider-with-fallback';
 
@@ -13,8 +13,7 @@ import { IV2SubgraphProvider, V2SubgraphPool } from './subgraph-provider';
  */
 export class V2SubgraphProviderWithFallBacks
   extends SubgraphProviderWithFallBacks<V2SubgraphPool>
-  implements IV2SubgraphProvider
-{
+  implements IV2SubgraphProvider {
   /**
    * Creates an instance of V2SubgraphProviderWithFallBacks.
    * @param fallbacks Ordered list of `IV2SubgraphProvider` to try to get pools from.

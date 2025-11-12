@@ -1,4 +1,4 @@
-import { ChainId } from '@uniswap/sdk-core';
+import { ChainId } from '@maxosllc/sdk-core';
 
 export const DEFAULT_BLOCKS_TO_LIVE: { [chain in ChainId]: number } = {
   // (60 minutes) / (12 seconds)= 300
@@ -45,7 +45,7 @@ export const DEFAULT_BLOCKS_TO_LIVE: { [chain in ChainId]: number } = {
   [ChainId.ROOTSTOCK]: 148,
   // (60 minutes) / (1 seconds) = 3600
   [ChainId.ZKSYNC]: 3600,
-  [ChainId.MONAD_TESTNET]: 3600,
+  [ChainId.BLOCKDAG_AWAKENING]: 300,
   // (60 minutes) / (1 seconds) = 3600
   [ChainId.SONEIUM]: 3600,
 };

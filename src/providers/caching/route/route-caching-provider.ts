@@ -4,13 +4,13 @@
  * @export
  * @interface IRouteCachingProvider
  */
-import { Protocol } from '@uniswap/router-sdk';
+import { Protocol } from '@maxosllc/router-sdk';
 import {
   ChainId,
   Currency,
   CurrencyAmount,
   TradeType,
-} from '@uniswap/sdk-core';
+} from '@maxosllc/sdk-core';
 
 import { AlphaRouterConfig } from '../../../routers';
 import { SwapOptions } from '../../../routers/router';

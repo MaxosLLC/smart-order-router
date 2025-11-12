@@ -1,4 +1,4 @@
-import { ChainId } from '@uniswap/sdk-core';
+import { ChainId } from '@maxosllc/sdk-core';
 import dotenv from 'dotenv';
 import { GraphQLClient } from 'graphql-request';
 import sinon from 'sinon';
@@ -31,8 +31,8 @@ describe('SubgraphProvider V4', () => {
     '0xd61a675f8a0c67a73dc3b54fb7318b4d91409040', // Zora Creator Hook
     '0x9ea932730a7787000042e34390b8e435dd839040', // Zora Post Hook
   ]);
-  
-  beforeEach(() => {});
+
+  beforeEach(() => { });
 
   afterEach(() => {
     sinon.restore();
@@ -175,7 +175,7 @@ describe('SubgraphProvider V4', () => {
 
     const pools = await subgraphProvider.getPools();
     expect(pools.length).toEqual(3);
-    
+
     // Verify we get pools from both queries
     const poolIds = pools.map(p => p.id).sort();
     expect(poolIds).toEqual(['0xNonZora1', '0xNonZora2', '0xZora1']);

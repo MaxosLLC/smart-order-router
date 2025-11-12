@@ -1,8 +1,8 @@
-import { ADDRESS_ZERO, Protocol } from '@uniswap/router-sdk';
-import { ChainId, Currency, Token, TradeType } from '@uniswap/sdk-core';
-import { isNativeCurrency } from '@uniswap/universal-router-sdk';
-import { FeeAmount } from '@uniswap/v3-sdk';
-import { DYNAMIC_FEE_FLAG } from '@uniswap/v4-sdk';
+import { ADDRESS_ZERO, Protocol } from '@maxosllc/router-sdk';
+import { ChainId, Currency, Token, TradeType } from '@maxosllc/sdk-core';
+import { isNativeCurrency } from '@maxosllc/universal-router-sdk';
+import { FeeAmount } from '@maxosllc/v3-sdk';
+import { DYNAMIC_FEE_FLAG } from '@maxosllc/v4-sdk';
 import _ from 'lodash';
 
 

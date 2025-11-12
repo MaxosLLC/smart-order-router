@@ -1,6 +1,6 @@
-import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, Currency, TradeType } from '@uniswap/sdk-core';
-import { UniversalRouterVersion } from '@uniswap/universal-router-sdk';
+import { Protocol } from '@maxosllc/router-sdk';
+import { ChainId, Currency, TradeType } from '@maxosllc/sdk-core';
+import { UniversalRouterVersion } from '@maxosllc/universal-router-sdk';
 import _ from 'lodash';
 
 import {

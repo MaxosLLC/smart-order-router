@@ -6,7 +6,7 @@ import {
   Percent,
   Token,
   TradeType
-} from '@uniswap/sdk-core';
+} from '@maxosllc/sdk-core';
 import {
   MixedRouteWithValidQuote,
   parseAmount,
@@ -23,7 +23,7 @@ import {
   getV2RouteWithValidQuoteStub,
   getV3RouteWithValidQuoteStub
 } from './caching/route/test-util/mocked-dependencies';
-import { UniversalRouterVersion } from '@uniswap/universal-router-sdk';
+import { UniversalRouterVersion } from '@maxosllc/universal-router-sdk';
 
 describe('portion provider', () => {
   const expectedRequestAmount = '1.01';

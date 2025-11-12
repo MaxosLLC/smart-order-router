@@ -4,7 +4,7 @@ import {
   Ether,
   NativeCurrency,
   Token,
-} from '@uniswap/sdk-core';
+} from '@maxosllc/sdk-core';
 
 // WIP: Gnosis, Moonbeam
 export const SUPPORTED_CHAINS: ChainId[] = [
@@ -34,6 +34,7 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.BASE_SEPOLIA,
   ChainId.SONEIUM,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
+  ChainId.BLOCKDAG_AWAKENING
 ];
 
 export const V2_SUPPORTED = [
@@ -176,6 +177,8 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.UNICHAIN;
     case 1868:
       return ChainId.SONEIUM;
+    case 1043:
+      return ChainId.BLOCKDAG_AWAKENING;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -211,6 +214,7 @@ export enum ChainName {
   MONAD_TESTNET = 'monad-testnet',
   SONEIUM = 'soneium-mainnet',
   MONAD = 'monad-mainnet',
+  BLOCKDAG_AWAKENING = 'blockdag-awakening'
 }
 
 export enum NativeCurrencyName {
@@ -223,6 +227,7 @@ export enum NativeCurrencyName {
   BNB = 'BNB',
   AVALANCHE = 'AVAX',
   MONAD = 'MON',
+  BDAG = 'BDAG',
 }
 
 export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
@@ -341,6 +346,11 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
     'ETHER',
     '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
   ],
+  [ChainId.BLOCKDAG_AWAKENING]: [
+    'BDAG',
+    'BDAG',
+    '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  ],
 };
 
 export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
@@ -372,6 +382,7 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.BASE_SEPOLIA]: NativeCurrencyName.ETHER,
   [ChainId.UNICHAIN]: NativeCurrencyName.ETHER,
   [ChainId.SONEIUM]: NativeCurrencyName.ETHER,
+  [ChainId.BLOCKDAG_AWAKENING]: NativeCurrencyName.BDAG
 };
 
 export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
@@ -434,6 +445,8 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.MONAD;
     case 1868:
       return ChainName.SONEIUM;
+    case 1043:
+      return ChainName.BLOCKDAG_AWAKENING;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -497,6 +510,8 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_UNICHAIN!;
     case ChainId.SONEIUM:
       return process.env.JSON_RPC_PROVIDER_SONEIUM!;
+    case ChainId.BLOCKDAG_AWAKENING:
+      return process.env.JSON_RPC_PROVIDER_BLOCKDAG_AWAKENING!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }
@@ -721,6 +736,13 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     18,
     'WETH',
     'Wrapped Ether'
+  ),
+  [ChainId.BLOCKDAG_AWAKENING]: new Token(
+    ChainId.BLOCKDAG_AWAKENING,
+    '0xC97B4e92fB267bB11b1CD2d475F9E8c16b433289',
+    18,
+    'WBDAG',
+    'Wrapped BDAG'
   ),
 };
 
